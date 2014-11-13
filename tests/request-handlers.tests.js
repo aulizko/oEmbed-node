@@ -43,5 +43,18 @@ describe('oEmbed', function () {
                 done(err);
             });
         });
+        it('should fallback for Embed.ly if Embed.ly API KEY provided', function (done) {
+            // sorry, I won't show you my API key :p
+            embed.get({url: 'http://vk.com/video3089420_170150287', embedlyApiKey: process.env.EMBEDLY_API_KEY})
+                .then(function (result) {
+                    result.provider_name.should.eql('Vk');
+                    result.provider_url.should.eql('http://vk.com');
+                    result.video_url.should.eql('http://vk.com/video3089420_170150287');
+                    done();
+                })
+                .catch(function (err) {
+                    done(err);
+                });
+        });
     });
 });

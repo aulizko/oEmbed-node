@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bluebird": "^2.3.11",
+    "lodash": "^2.4.1",
     "request": "^2.47.0"
   },
   "devDependencies": {
