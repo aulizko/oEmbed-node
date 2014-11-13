@@ -1,6 +1,6 @@
-var should = require('should');
+require('should');
 // use native Promise if possible
-var Promise = global.Promise || require('bluebird');
+var Promise = require('bluebird');
 
 // Such a strange construction used because Custom Providers actually do not get .init(url) call
 // despite README telling us so
